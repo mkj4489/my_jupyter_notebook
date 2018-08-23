@@ -33,3 +33,16 @@ from matplotlib import pyplot as plt
 - ヒストグラムをpngファイルとして保存する　plt.savefig("sample_fig.png")
 - 箱ひげ図を描く　train[["y","week"]].boxplot(by="week")
 
+- 各値が欠損値か否かを出力　train.isnull()
+- 各列（カラム）にTrueが１つ以上あるかを出力　train.isnull().any()
+- 各列カラムに欠損値をいくつあるかを数える　train.isnull().sum()
+- 欠損値に０の値で補間する　train.fillna(0)
+- 欠損値を削除する　train.dropna()
+- precipitationの項目に、欠損値がないか確認　train["precipitation"].value_counts()
+
+- 相関関係　どちらかが増えるともう一方も増える　正の相関　どちらかが増えるともう一方が減る　負の相関
+- 0 相関関係がない　1 相関関係が強い
+- 相関係数は、散布図を描いてみるとわかりやすい。
+- ｙとtempperatureの相関係数を出す　train[["y","temperature"]].corr()
+- 散布図を描く　train.plot.scatter(x="temperature", y="y", figsize=(5,5))
+
