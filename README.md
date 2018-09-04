@@ -46,3 +46,41 @@ from matplotlib import pyplot as plt
 - ｙとtempperatureの相関係数を出す　train[["y","temperature"]].corr()
 - 散布図を描く　train.plot.scatter(x="temperature", y="y", figsize=(5,5))
 
+### 簡単な予測モデルを作ってみる
+- おまじない
+```
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+%matplotlib inline
+from sklearn.linear_model import LinearRegression as LR
+```
+- 単回帰の場合のみ、説明変数に対しておまじないが必要
+```
+trainX = trainX.values.reshape(-1,1)
+testX = testX.values.reshape(-1,1)
+```
+- 回帰のモデルの箱を用意
+```
+model1 = LR()
+```
+- 単回帰モデルを作成
+```
+model1.fit(trainX,y)
+```
+- 作ったモデルの傾きや切片を確かめる
+```
+傾き
+model1.coef_
+切片
+model1.intercept_
+```
+- 予測
+```
+pred = model1.predict(testX)
+pred
+```
+- ファイル(submit1.csv)で書きだす
+```
+sample.to_csv("submit1.csv",index=None,header=None)
+```
