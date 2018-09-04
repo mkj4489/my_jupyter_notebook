@@ -84,3 +84,16 @@ pred
 ```
 sample.to_csv("submit1.csv",index=None,header=None)
 ```
+- 欠損値を確認する
+```
+train.isnull().sum()
+```
+- kcalの平均値を求める
+```
+avg = train["kcal"].mean()
+```
+- 平均値を使って、kcalの欠損値を補間する
+```
+trainX = train["kcal"].fillna(avg)
+testX = train["kcal"].fillna(avg)
+```
