@@ -14,7 +14,9 @@ from matplotlib import pyplot as plt
 - csvファイルにヘッダー行がないものを読み込む場合
 -- sample = pd.read_csv("sample.csv", header=None)
 
-- 基本統計量を出力　train.describe()
+- 基本統計量を出力
+``` train.describe() ```
+
 - データの型を出力　train.info()
 - 1つのカラムだけを出力　train["y"]
 - yの平均　train["y"].mean()
