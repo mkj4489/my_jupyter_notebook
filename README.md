@@ -6,10 +6,12 @@
 - SHIFT + ENTER : セルの実行
 
 - おまじない
+```
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 %matplotlib inline
+```
 
 - csvファイルにヘッダー行がないものを読み込む場合
 -- sample = pd.read_csv("sample.csv", header=None)
